@@ -1,0 +1,28 @@
+{
+  "name": "fingerprint",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist && rollup -c rollup.config.mjs"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "@fingerprintjs/fingerprintjs-pro-react-native": "^3.0.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.13.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-license": "^3.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "5.0.4",
+    "tslib": "^2.6.2",
+    "@types/react": "18.2.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}

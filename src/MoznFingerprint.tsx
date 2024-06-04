@@ -1,6 +1,6 @@
 import React from 'react';
 import type {FC, PropsWithChildren} from 'react';
-import {FingerprintJsProProvider} from '@fingerprintjs/fingerprintjs-pro-react-native';
+import {FingerprintJsProProvider, useVisitorData} from '@fingerprintjs/fingerprintjs-pro-react-native';
 
 type Region = 'eu' | 'us' | 'ap';
 
@@ -11,10 +11,15 @@ type MoznFingerprintProps = PropsWithChildren<{
   extendedResponseFormat?: boolean;
 }>;
 
+const useFingerprint = () => {
+  const visitorData = useVisitorData();
+  return visitorData;
+}
+
 const MoznFingerprint: FC<MoznFingerprintProps> = ({children, ...props}) => {
   return (
     <FingerprintJsProProvider {...props}>{children}</FingerprintJsProProvider>
   );
 };
 
-export {MoznFingerprint};
+export {MoznFingerprint, useFingerprint};
